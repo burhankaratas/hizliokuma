@@ -1,0 +1,97 @@
+{% extends "app/appLayout.html" %}
+
+{% block header %}
+    <title> Hızlı Okuma - Öğretmen Hesap Ekle </title>
+{% endblock %}
+
+{% block body %}
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <span style="font-size: 25px;"> Tüm Kullanıcılar </span>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Kullanıcı Adı</th>
+                        <th scope="col">Öğretmen Mi?</th>
+                        <th scope="col">Admin Mi?</th>
+                        <th scope="col">İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{% if user.is_teacher %}Evet{% else %}Hayır{% endif %}</td>
+                            <td>{% if user.is_admin %}Evet{% else %}Hayır{% endif %}</td>
+                            <td>
+                                <button class="btn btn-primary" data-username="{{ user.username }}">Öğretmen Ata</button>
+                                <button class="btn btn-danger" data-username="{{ user.username }}">Öğretmenlikten İhraç Et</button>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".btn-primary");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                const username = this.getAttribute("data-username");
+                const url = `/set-teacher/${username}`; // Kullanıcı adına göre URL oluşturun
+
+                fetch(url, {
+                    method: "POST" // veya "PUT" kullanabilirsiniz
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        alert("Kullanıcı öğretmen olarak atanmıştır.");
+                    } else {
+                        alert("Bir hata oluştu. Kullanıcı öğretmen olarak atanamadı.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Hata:", error);
+                });
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const buttons = document.querySelectorAll(".btn-danger");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                const username = this.getAttribute("data-username");
+                const url = `/remove-teacher/${username}`; // Kullanıcı adına göre URL oluşturun
+
+                fetch(url, {
+                    method: "POST" // veya "PUT" kullanabilirsiniz
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        alert("Kullanıcı öğretmenlikten ihraç edilmiştir.");
+                    } else {
+                        alert("Bir hata oluştu. Kullanıcı öğretmenlikten ihraç edilemedi.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Hata:", error);
+                });
+            });
+        });
+    });
+</script>
+
+
+
+{% endblock %}

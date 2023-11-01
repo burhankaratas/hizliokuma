@@ -1,0 +1,52 @@
+{% include 'layout.html'   %}
+
+
+{% block header %}
+    <title> Hızlı Okuma - Giriş Yap </title>
+{% endblock %}
+
+{% block body %}
+
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <div style="border-radius: 25px; text-align: center;">
+                <span style="font-size: 30px;"> Giriş Yaparak <span style="color: yellowgreen;"> Hesabınıza </span> Erişebilirsiniz </span>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <br>
+            <div style="border-radius: 25px; text-align: center;">
+                <br>
+                <form method="post" class="horizontal-form">
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.username.id }}"> Kullanıcı Adınız:</label>
+                        </div>
+                        <span> {{ form.username(class="form-control") }} </span>
+                    </div>
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.password.id }}"> Şifrenizi Girin:</label>
+                        </div>
+                        {{ form.password(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Giriş Yap" style="padding-left: 20px; padding-right: 20px; background-color: black; color: white; border: none; padding-top: 10px; padding-bottom: 10px;">
+                    </div>
+                </form>
+                
+                <br>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+    
+{% endblock %}

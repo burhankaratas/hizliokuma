@@ -1,0 +1,24 @@
+{% include 'layout.html'   %}
+
+
+{% block header %}
+    <title> Hızlı Okuma - {{haber.baslik}} </title>
+{% endblock %}
+
+
+{% block body %}
+
+<br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <span style="font-size: 30px; color: yellowgreen;"> {{haber.baslik}}  </span>
+                <hr>
+                <span> Tarih: {{haber.date}} </span>
+                <hr>
+                <p> {{haber.icerik}} </p>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

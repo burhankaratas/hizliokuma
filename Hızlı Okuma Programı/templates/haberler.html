@@ -1,0 +1,81 @@
+{% include 'layout.html'   %}
+
+
+{% block header %}
+
+<title> Hızlı Okuma - Haberler </title>
+    
+{% endblock %}
+
+{% block body %}
+
+{% if admin == True %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <br><br><br><br>
+
+            <div style="border-radius: 25px; text-align: center;">
+                <span style="font-size: 30px;"> En Son <span style="color: yellowgreen;"> Haberler </span>  </span>
+            </div>
+
+            <br><br>
+            <div class="list-group">
+                {% for haber in haberler %}
+                <a href="/haberler/{{haber.id}}" class="list-group-item list-group-item-action"> 
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm">
+                                {{haber.baslik }}
+                            </div>
+                        </a>
+                            <div class="col-sm" style="text-align: end;">
+                                <a href="/haber-sil/{{haber.id}}" class="btn btn-danger"> Haberi Sil </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                <br>
+            {% endfor %}                                  
+              </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <br><br><br><br>
+
+            <div style="border-radius: 25px; text-align: center;">
+                <span style="font-size: 30px;"> En Son <span style="color: yellowgreen;"> Haberler </span>  </span>
+            </div>
+
+            <br><br>
+            <div class="list-group">
+                {% for haber in haberler %}
+                <a href="/haberler/{{haber.id}}" class="list-group-item list-group-item-action"> 
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm">
+                                {{haber.baslik }}
+                            </div>
+                            <div class="col-sm" style="text-align: end;">
+                                {{haber.date }}
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <br>
+            {% endfor %}                                  
+              </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

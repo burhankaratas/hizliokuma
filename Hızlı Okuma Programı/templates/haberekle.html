@@ -1,0 +1,26 @@
+{% include 'app/appLayout.html'   %}
+
+{% block header %}
+    <title> Hızlı Okuma - Haber Ekle </title>
+{% endblock %}
+
+
+{% block body %}
+
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <span style="font-size: 25px;"> Haber Ekleyin </span>
+            <hr>
+            <form method="post" action="/haber-ekle">
+                <input type="text" class="form-control" name="baslik" placeholder="Haber Başlığını Giriniz">
+                <br>
+                <textarea class="form-control" name="icerik" rows="14" placeholder="Haber İçeriğini Giriniz"></textarea> <br>
+                <input type="submit" class="btn btn-dark" value="Yayımla" style="padding-left: 70px; padding-right: 70px; padding-top: 10px; padding-bottom: 10px;">
+            </form>            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

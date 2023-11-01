@@ -1,0 +1,57 @@
+{% include 'app/appLayout.html'   %}
+
+{% block header %}
+    <title> Hızlı Okuma - Kişisel Bilgiler </title>
+{% endblock %}
+
+
+{% block body %}
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="list-group">
+                <div style="text-align: center;">
+                    <span class="list-group-item text-dark" style="padding-top: 30px; padding-bottom: 30px; font-size: 30px;"> <span style="color: yellowgreen;"> Kişisel </span> Bilgiler </span>
+                </div>
+                <span class="list-group-item text-dark" style="text-decoration: none;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm" style="text-align: start;">
+                                Kullanıcı Adı:
+                            </div>
+                            <div class="col-sm" style="text-align: end;">
+                                <a href="/username-edit" style="color: black; text-decoration: none;"> <i class="fa-solid fa-pen-to-square"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span class="list-group-item text-dark" style="text-decoration: none;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm" style="text-align: start;">
+                                Email:
+                            </div>
+                            <div class="col-sm" style="text-align: end;">
+                                <a href="/email-edit" style="color: black; text-decoration: none;"> <i class="fa-solid fa-pen-to-square"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+                <span class="list-group-item text-dark" style="text-decoration: none;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm" style="text-align: start;">
+                                Telefon:
+                            </div>
+                            <div class="col-sm" style="text-align: end;">
+                                <a href="/phone-edit" style="color: black; text-decoration: none;"> <i class="fa-solid fa-pen-to-square"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

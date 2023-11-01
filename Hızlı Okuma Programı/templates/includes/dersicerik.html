@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    {% block header %}
+        
+    {% endblock %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: #202123;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            transition: left 0.4s;
+            overflow-y: auto;
+            z-index: 10;
+        }
+
+
+        #content {
+            margin-left: 0;
+        }
+
+        #sidebar.active {
+            left: 0;
+        }
+
+        #open-sidebar {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            border: none;
+            background: none;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        #open-sidebar .icon:nth-child(2) {
+            display: none;
+        }
+
+        #sidebar.active #open-sidebar .icon:nth-child(1) {
+            display: none;
+        }
+
+        #sidebar.active #open-sidebar .icon:nth-child(2) {
+            display: inline-block;
+            color: #f00;
+        }
+
+        /* Kaydırma çubuğu genişliğini ayarlama */
+        #sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        /* Kaydırma çubuğuna yükseltilmiş görünüm eklemek */
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: black;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: rgb(206, 205, 205);">
+
+
+
+    <div id="sidebar">
+        <div class="sidebar-content">
+
+        </div>
+    </div>
+
+
+    <div id="content">
+        {% block dersbody %}
+            
+        {% endblock %}
+    </div>
+
+
+    <button id="open-sidebar">
+        <i id="ss" class="fas fa-bars icon" style="z-index: 20;"></i>
+    </button>
+
+
+
+
+    <script>
+        var clickCount = 0;
+
+        document.getElementById('open-sidebar').addEventListener('click', function () {
+            let ss = document.querySelector("#ss");
+            clickCount++; // Her tıklamada tıklanma sayısını artır
+            document.getElementById('sidebar').classList.toggle('active');
+            if (clickCount % 2 === 1) { // Tıklanma sayısı çiftse
+                document.getElementById('open-sidebar').style.color = "white";
+                document.getElementById('open-sidebar').style.marginLeft = "180px";
+
+                ss.classList.add('fa-xmark');
+                ss.classList.remove("fa-bars");
+            }
+
+            else if (clickCount % 2 == 0) {
+                document.getElementById('open-sidebar').style.color = "black";
+                document.getElementById('open-sidebar').style.marginLeft = "0";
+
+                ss.classList.add('fa-bars');
+                ss.classList.remove("fa-xmark");
+            }
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script src="../../static/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+
+</html>

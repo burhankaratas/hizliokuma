@@ -1,0 +1,19 @@
+footer {
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .container .row .col-sm i {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+footer a:hover {
+    color: yellowgreen;
+    text-decoration: none;
+}

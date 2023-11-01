@@ -1,0 +1,27 @@
+{% extends 'app/appLayout.html' %}
+
+{% block header %}
+    <title> Hızlı Okuma - Öğretmen </title>
+{% endblock %}
+
+
+{% block body %}
+
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm text-center">
+            <div class="list-group">
+                <span class="list-group-item text-dark" style="padding-top: 30px; padding-bottom: 30px; font-size: 30px;"> <span style="color: yellowgreen;"> Öğretmen </span> Kontrol Paneli </span>
+                <a class="list-group-item text-dark" href="/ogrencilerim" style="text-decoration: none;"> Öğrencilerim </a>
+                <a class="list-group-item text-dark" href="/ogrenci-ekle" style="text-decoration: none;"> Öğrenci Hesabı Oluştur </a>
+                <a class="list-group-item text-dark" href="/ilerleme-takip-ogrenci" style="text-decoration: none;"> Öğrenci İlerleme Takibi </a>
+                <a class="list-group-item text-dark" href="/dersler" style="text-decoration: none;"> İçerikleri Görüntüle </a>
+                <a class="list-group-item text-dark" href="/hesap" style="text-decoration: none;"> Hesap Ayarları </a>
+                <a class="list-group-item text-dark" href="/logout" style="text-decoration: none;"> Çıkış Yap </a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

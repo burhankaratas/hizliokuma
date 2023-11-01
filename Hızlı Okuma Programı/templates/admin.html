@@ -1,0 +1,32 @@
+{% extends 'app/appLayout.html' %}
+
+{% block header %}
+    <title> Hızlı Okuma - Admin </title>
+{% endblock %}
+
+
+{% block body %}
+
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm text-center">
+            <div class="list-group">
+                <span class="list-group-item text-dark" style="padding-top: 30px; padding-bottom: 30px; font-size: 30px;"> <span style="color: yellowgreen;"> Admin </span> Kontrol Paneli </span>
+                <a class="list-group-item text-dark" href="/haber-ekle" style="text-decoration: none;"> Haber Ekle </a>
+                <a class="list-group-item text-dark" href="/haber-guncelle" style="text-decoration: none;"> Haber Güncelle </a>
+                <a class="list-group-item text-dark" href="/haberler" style="text-decoration: none;"> Haber Sil </a>
+                <a class="list-group-item text-dark" href="/ogretmen-hesap-ekle" style="text-decoration: none;"> Öğretmen Hesabı Ekle </a>
+                <a class="list-group-item text-dark" href="/ogrenci-hesap-ekle" style="text-decoration: none;"> Öğrenci Hesabı Oluştur </a>
+                <a class="list-group-item text-dark" href="/hesap" style="text-decoration: none;"> Hesap Ayarları </a>
+                <a class="list-group-item text-dark" href="/logout" style="text-decoration: none;"> Çıkış Yap </a>
+                {% if admin == True %}
+                
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

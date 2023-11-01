@@ -1,0 +1,36 @@
+{% include 'app/appLayout.html' %}
+
+{% block header %}
+<title> Hızlı Okuma - Öğrencilerim </title>
+{% endblock %}
+
+{% block body %}
+
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {% for student in students %}
+            <span class="list-group-item list-group-item-action"> 
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm" style="text-align: start; display: flex; align-items: center;">
+                            {{ student.username }} 
+                        </div>
+                        <div class="col-sm" style="text-align: end;">
+                            <form action="{{ url_for('ogrenciSil', username=student.username) }}" method="post">
+                                <button type="submit" class="btn btn-dark">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </span>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

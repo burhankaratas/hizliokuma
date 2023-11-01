@@ -1,0 +1,29 @@
+{% include 'app/appLayout.html' %}
+
+
+{% block header %}
+<title> Hızlı Okuma - Hesap </title>
+{% endblock %}
+
+{% block body %}
+
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm text-center">
+            <div class="list-group">
+                <span class="list-group-item text-dark" style="padding-top: 30px; padding-bottom: 30px; font-size: 30px;"> <span style="color: yellowgreen;"> Öğrenci </span> Hesap Paneli </span>
+                <a class="list-group-item text-dark" href="/dersler" style="text-decoration: none;"> Günlük Dersler </a>
+                <a class="list-group-item text-dark" href="/alistirmalar" style="text-decoration: none;"> Alıştırmalar </a>
+                <a class="list-group-item text-dark" href="/etkinlikler" style="text-decoration: none;"> Etkinlikler </a>
+                <a class="list-group-item text-dark" href="/hiz-testi" style="text-decoration: none;"> Hız Testi </a>
+                <a class="list-group-item text-dark" href="/ilerleme-takip" style="text-decoration: none;"> İlerleme Takibi </a>
+                <a class="list-group-item text-dark" href="/hesap" style="text-decoration: none;"> Hesabınız </a>
+                <a class="list-group-item text-dark" href="/logout" style="text-decoration: none;"> Çıkış Yap </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

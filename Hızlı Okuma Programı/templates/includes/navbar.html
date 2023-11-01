@@ -1,0 +1,31 @@
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm text-start">
+                <span id="baslik"> <a href="/"> İletken Hızlı Okuma </a> </span>
+                <ul>
+                    
+                </ul>
+            </div>
+            <div class="col-sm coll" style="text-align: end;">
+                <ul>
+
+
+                    {% if session["logged_in"] == True %}
+                    <li> <a href="/hakkimizda"> Hakkımızda </a></li>
+                    <li> <a href="/haberler"> Haberler </a></li>
+                    <li> <a href="/sss"> SSS </a></li>
+                    <li> <a href="/logout"> <i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 30px; margin-left: 30px;"></i> </a></li>
+                    {% else %}
+                    <li> <a href="/hakkimizda"> Hakkımızda </a></li>
+                    <li> <a href="/haberler"> Haberler </a></li>
+                    <li> <a href="/sss"> SSS </a></li>
+                    <li> <a href="/login"> Giriş Yap </a></li>
+                    <li> <a href="/register"> Kayıt Ol </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<br><br><br>

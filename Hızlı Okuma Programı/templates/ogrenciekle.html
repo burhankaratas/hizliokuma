@@ -1,0 +1,51 @@
+{% include 'app/appLayout.html'   %}
+
+{% block header %}
+    <title> Hızlı Okuma - Öğrenci Ekle </title>
+{% endblock %}
+
+
+{% block body %}
+    <br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <form method="post" class="horizontal-form">
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.username.id }}"> Kullanıcı Adı Giriniz:</label>
+                        </div>
+                        <span> {{ form.username(class="form-control") }} </span>
+                    </div>
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.email.id }}"> Email Adresiniz:</label>
+                        </div>
+                        {{ form.email(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.phone.id }}"> Telefon Numaranız:</label>
+                        </div>
+                        {{ form.phone(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.password.id }}"> Şifrenizi Belirleyin:</label>
+                        </div>
+                        {{ form.password(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <div style="text-align: start;">
+                            <label for="{{ form.passwordAgain.id }}"> Şifreyi Tekrar Giriniz:</label>
+                        </div>
+                        {{ form.passwordAgain(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Kayıt Ol" style="padding-left: 20px; padding-right: 20px; background-color: black; color: white; border: none; padding-top: 10px; padding-bottom: 10px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
